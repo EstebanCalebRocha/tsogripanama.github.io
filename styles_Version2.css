@@ -1,0 +1,140 @@
+/* styles.css - Estilo simple y limpio para la página de Transporte Sogri */
+:root{
+  --bg:#0f1724;
+  --card:#ffffff;
+  --accent:#0b76d1;
+  --muted:#6b7280;
+  --max-width:1100px;
+  --radius:8px;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color:#0b1720;
+  background:linear-gradient(180deg,#f8fafc, #eef2f7);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.5;
+}
+
+.container{
+  max-width:var(--max-width);
+  margin:0 auto;
+  padding:1rem;
+}
+
+.site-header{
+  background:transparent;
+  padding:1rem 0;
+}
+
+.brand{
+  margin:0;
+  font-size:1.4rem;
+  font-weight:700;
+  letter-spacing:0.2px;
+  color:var(--accent);
+}
+
+.main-nav{
+  margin-top:0.5rem;
+  display:flex;
+  gap:0.75rem;
+  flex-wrap:wrap;
+  align-items:center;
+}
+
+.main-nav a{
+  text-decoration:none;
+  color:var(--muted);
+  padding:0.4rem 0.6rem;
+  border-radius:6px;
+}
+
+.btn{
+  display:inline-block;
+  text-decoration:none;
+  padding:0.55rem 0.9rem;
+  border-radius:8px;
+  font-weight:600;
+  cursor:pointer;
+}
+
+.btn-primary{
+  background:var(--accent);
+  color:white;
+  box-shadow:0 6px 18px rgba(11,118,209,0.18);
+}
+
+.btn-outline{
+  background:transparent;
+  border:1px solid rgba(11,118,209,0.12);
+  color:var(--accent);
+}
+
+.hero{
+  position:relative;
+  margin-top:1rem;
+  border-radius:var(--radius);
+  overflow:hidden;
+}
+
+.hero-image{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+  display:block;
+  filter:contrast(1.02) saturate(1.05);
+}
+
+.hero-content{
+  position:relative;
+  margin-top:-120px;
+  background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+  padding:1.25rem;
+  border-radius:12px;
+  box-shadow:0 12px 30px rgba(15,23,36,0.08);
+}
+
+.hero-content h2{
+  margin:0 0 0.5rem 0;
+  font-size:1.6rem;
+  color:#031022;
+}
+
+.info{
+  margin:1.5rem 0;
+  background:rgba(255,255,255,0.7);
+  padding:1rem;
+  border-radius:10px;
+}
+
+.site-footer{
+  margin-top:2rem;
+  padding:1rem 0;
+  color:var(--muted);
+  text-align:center;
+  font-size:0.95rem;
+}
+
+/* Responsive */
+@media (min-width:900px){
+  .main-nav{
+    justify-content:flex-end;
+  }
+  .site-header .container{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .hero-content{
+    max-width:60%;
+  }
+}
+
+@media (max-width:600px){
+  .hero-image{height:260px}
+  .hero-content{margin-top:-80px;padding:0.9rem}
+}

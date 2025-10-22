@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Transporte Sogri, S.A.</title>
+  <link rel="stylesheet" href="styles.css">
+  <meta name="description" content="Transporte Sogri, S.A. - Soluciones confiables de transporte. Accede a las operaciones desde nuestra app.">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">Transporte Sogri, S.A.</h1>
+      <nav class="main-nav">
+        <a href="#servicios">Servicios</a>
+        <a href="#certificaciones">Certificaciones</a>
+        <a href="#nosotros">Quiénes somos</a>
+        <a class="btn btn-primary" href="operaciones.html">Acceder a Operaciones</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <!-- Usamos una imagen pública de Unsplash (query: truck). 
+           Si prefieres una imagen fija en el repositorio, súbela a assets/images/truck.jpg y reemplaza el src -->
+      <img class="hero-image" src="https://source.unsplash.com/1600x900/?truck" alt="Camión imponente de Transporte Sogri">
+      <div class="hero-content container">
+        <h2>Transporte Sogri: Transporte profesional y seguro</h2>
+        <p>Soluciones logísticas confiables. Accede a la información de operaciones a través de nuestra app (no está embebida aquí — se abrirá en la aplicación externa).</p>
+        <p>
+          <a class="btn btn-primary" href="operaciones.html">Ir a Operaciones</a>
+          <a class="btn btn-outline" href="#nosotros">Conócenos</a>
+        </p>
+      </div>
+    </section>
+
+    <section id="servicios" class="info container">
+      <h3>Servicios (próximamente)</h3>
+      <p>Aquí podremos agregar en el futuro detalles de los servicios: transporte local, internacional, carga especializada, flota, seguimiento, etc.</p>
+    </section>
+
+    <section id="certificaciones" class="info container">
+      <h3>Certificaciones</h3>
+      <p>Iconos de certificaciones y cumplimientos. (Se pueden añadir logos o SVGs según correspondan).</p>
+    </section>
+
+    <section id="nosotros" class="info container">
+      <h3>Quiénes somos</h3>
+      <p>Breve historia y misión de la empresa. Este espacio está reservado para la descripción de la compañía y el equipo.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Transporte Sogri, S.A. — Todos los derechos reservados.</p>
+      <p class="small">La sección de Operaciones se abre en una página separada que contiene un enlace público a la aplicación AppSheet (no embebida).</p>
+    </div>
+  </footer>
+
+  <script>
+    // Rellena año automáticamente
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

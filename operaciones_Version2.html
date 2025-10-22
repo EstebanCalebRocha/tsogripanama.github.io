@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Operaciones — Transporte Sogri, S.A.</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <h1 class="brand">Operaciones — Transporte Sogri, S.A.</h1>
+      <nav class="main-nav">
+        <a href="index.html">Inicio</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="info">
+      <h2>Acceso a la aplicación de Operaciones</h2>
+      <p>Este enlace abre la aplicación de AppSheet en una pestaña nueva. No embebemos la aplicación en esta página; simplemente proporcionamos el enlace público.</p>
+
+      <!--
+        REEMPLAZAR: sustituya el valor de href con la URL pública de su aplicación AppSheet.
+        Ejemplo: https://www.appsheet.com/start/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+      -->
+      <p>
+        <a id="appsheet-link" class="btn btn-primary" href="https://www.appsheet.com/start/4cae355e-b740-4fe1-a5e5-2db3212c665c" target="_blank" rel="noopener noreferrer">
+          Abrir App de Operaciones (AppSheet)
+        </a>
+      </p>
+
+      <h3>Notas para usuarios</h3>
+      <ul>
+        <li>El enlace se abre en una nueva pestaña para mantener esta página pública y separada.</li>
+        <li>Si la aplicación requiere autenticación o permisos, AppSheet solicitará lo necesario al abrirse.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="year"></span> Transporte Sogri, S.A.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Opcional: cambiar el href dinámicamente si quieres inyectarlo desde una variable
+    // document.getElementById('appsheet-link').href = 'https://www.appsheet.com/start/YOUR_APP_ID';
+  </script>
+</body>
+</html>
