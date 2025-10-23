@@ -65,7 +65,7 @@ body{
 .btn-primary{
   background:var(--accent);
   color:white;
-  box-shadow:0 6px 18px rgba(11,118,209,0.18);
+  box-shadow:0 6px 18px rgba(209, 178, 0,0.18);
 }
 
 .btn-outline{
