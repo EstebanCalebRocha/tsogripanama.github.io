@@ -140,3 +140,8 @@ body{
   .hero-image{height:260px}
   .hero-content{margin-top:-80px;padding:0.9rem}
 }
+.hero-content, .info, body, .container, .site-header, .site-footer {
+   background: #fff !important;
+   box-shadow: none !important;
+}
+
