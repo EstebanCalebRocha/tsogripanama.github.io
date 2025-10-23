@@ -3,63 +3,65 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Transporte Sogri, S.A.</title>
-  <link rel="stylesheet" href="styles.css">
-  <meta name="description" content="Transporte Sogri, S.A. - Soluciones confiables de transporte. Accede a las operaciones desde nuestra app.">
+  <title>Transporte Sogri — Demo</title>
+  <!-- Asegúrate de que este archivo apunte a tu styles.css modificado -->
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <header class="site-header">
     <div class="container">
-      <h1 class="brand">Transporte Sogri, S.A.</h1>
-      <nav class="main-nav">
-        <a href="#servicios">Servicios</a>
-        <a href="#certificaciones">Certificaciones</a>
-        <a href="#nosotros">Quiénes somos</a>
-        <a class="btn btn-primary" href="operaciones.html">APPSOGRI</a>
+      <h1 class="brand">Transporte Sogri</h1>
+      <nav class="main-nav" role="navigation" aria-label="Principal">
+        <a href="#" class="btn btn-outline">Contacto</a>
+        <!-- botón appsogri: usar estas clases para aplicar el estilo primario -->
+        <a href="operaciones.html" class="btn btn-primary">appsogri</a>
       </nav>
     </div>
   </header>
 
-  <main>
+  <main class="container">
+    <!-- Hero con imagen y caja sobrepuesta centrada -->
     <section class="hero">
-      <!-- Imagen local optimizada; si por alguna razón no carga, usamos Unsplash como fallback -->
-      <img class="hero-image" src="assets/images/truck.jpg" alt="Camión imponente de Transporte Sogri" onerror="this.onerror=null;this.src='https://source.unsplash.com/1600x900/?truck'">
-      <div class="hero-content container">
-        <h2>SIRVIENDOLE AL COMERCIO DESDE 1987</h2>
-        <p></p>
-        <p>
-          <a class="btn btn-primary" href="operaciones.html">APPSOGRI</a>
-          <a class="btn btn-outline" href="#nosotros">Conócenos</a>
-        </p>
+      <!-- Reemplaza "assets/images/truck.jpg" con la ruta real de tu imagen -->
+      <img src="hero.jpg" alt="Imagen de transporte Sogri" class="hero-image" />
+      <div class="hero-content">
+        <h2>Bienvenido a Transporte Sogri</h2>
+        <p>Reserva tu viaje fácilmente desde la app y viaja seguro.</p>
+        <div style="margin-top:0.5rem;">
+          <a href="operaciones.html" class="btn btn-primary">Reservar</a>
+          <span class="badge-gold" style="margin-left:0.6rem;">NUEVO</span>
+        </div>
       </div>
     </section>
 
-    <section id="servicios" class="info container">
-      <h3>Servicios (próximamente)</h3>
-      <p>Aquí podremos agregar en el futuro detalles de los servicios: transporte local, internacional, carga especializada, flota, seguimiento, etc.</p>
-    </section>
+    <!-- Fila con los 3 recuadros centrados -->
+    <!-- IMPORTANTE: envuelve los tres .info en .info-row (o .cards / .info-grid) -->
+    <div class="info-row" aria-label="Servicios destacados">
+      <div class="info">
+        <h3>Rutas y Horarios</h3>
+        <p>Consulta las rutas disponibles y los horarios actualizados.</p>
+      </div>
 
-    <section id="certificaciones" class="info container">
-      <h3>Certificaciones</h3>
-      <p>Iconos de certificaciones y cumplimientos. (Se pueden añadir logos o SVGs según correspondan).</p>
-    </section>
+      <div class="info">
+        <h3>Nuestra Flota</h3>
+        <p>Vehículos modernos, servicio cómodo y seguro.</p>
+      </div>
 
-    <section id="nosotros" class="info container">
-      <h3>Quiénes somos</h3>
-      <p>Breve historia y misión de la empresa. Este espacio está reservado para la descripción de la compañía y el equipo.</p>
+      <div class="info">
+        <h3>Soporte 24/7</h3>
+        <p>Equipo de atención listo para ayudarte en cualquier momento.</p>
+      </div>
+    </div>
+
+    <!-- Bloque adicional de información -->
+    <section class="info">
+      <h4>Sobre nosotros</h4>
+      <p>Transporte Sogri ofrece soluciones de movilidad con atención personalizada y flota confiable.</p>
     </section>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <p>&copy; <span id="year"></span> Transporte Sogri, S.A. — Todos los derechos reservados.</p>
-      <p class="small">La sección de Operaciones se abre en una página separada que contiene un enlace público a la aplicación AppSheet (no embebida).</p>
-    </div>
+    <div class="container">© 2025 Transporte Sogri</div>
   </footer>
-
-  <script>
-    // Rellena año automáticamente
-    document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
 </body>
 </html>
