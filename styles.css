@@ -57,6 +57,7 @@ body{
 .btn{
   display:inline-block;
   text-decoration:none;
+  color: #000000;
   padding:0.55rem 0.9rem;
   border-radius:8px;
   font-weight:600;
