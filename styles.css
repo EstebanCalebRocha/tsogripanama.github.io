@@ -1,9 +1,12 @@
-/* styles.css - Estilo simple y limpio para la página de Transporte Sogri */
+/* styles.css - Estilo simple y limpio para la página de Transporte Sogri
+   Modificado: mejorar contraste del botón "appsogri" y centrar los recuadros inferiores
+*/
 :root{
   --bg:#0f1724;
   --card:#ffffff;
-  --accent:#0b76d1;
+  --accent:#0b76d1; /* azul principal */
   --muted:#6b7280;
+  --gold:#d1b200; /* color gold para acentos */
   --max-width:1100px;
   --radius:8px;
 }
@@ -47,6 +50,7 @@ body{
   align-items:center;
 }
 
+/* enlaces principales */
 .main-nav a{
   text-decoration:none;
   color:var(--muted);
@@ -54,22 +58,34 @@ body{
   border-radius:6px;
 }
 
+/* botones */
 .btn{
   display:inline-block;
   text-decoration:none;
-  color: #000000;
+  color:inherit; /* hereda color para no forzar gris/negro */
   padding:0.55rem 0.9rem;
   border-radius:8px;
   font-weight:600;
   cursor:pointer;
+  border: none;
 }
 
+/* botón primario - asegurar contraste alto sobre azul */
 .btn-primary{
   background:var(--accent);
-  color:white;
-  box-shadow:0 6px 18px rgb(209, 178, 0);
+  color:#ffffff !important; /* forzar blanco para máxima legibilidad */
+  box-shadow:0 6px 18px rgba(209, 178, 0, 0.15); /* sombra con tint dorado para contraste sutil */
+  border: 1px solid rgba(255,255,255,0.06);
 }
 
+/* si el botón primario está dentro del nav (mayor especificidad) */
+.main-nav a.btn-primary{
+  color:#ffffff !important;
+  background:var(--accent);
+  box-shadow:0 6px 18px rgba(209, 178, 0, 0.15);
+}
+
+/* botón outline (si lo usas) */
 .btn-outline{
   background:transparent;
   border:1px solid rgba(11,118,209,0.12);
@@ -91,13 +107,19 @@ body{
   filter:contrast(1.02) saturate(1.05);
 }
 
+/* Hero content: centrar y sobreponer */
 .hero-content{
   position:relative;
-  margin-top:-120px;
-  background:#fff;
+  margin-top:-120px;        /* mantiene la sobreposición sobre la imagen */
+  margin-left:auto;
+  margin-right:auto;
+  background:var(--card);
   padding:1.25rem;
   border-radius:12px;
-  box-shadow:0 12px 30px rgba(15,23,36,0.08);
+  box-shadow:0 12px 30px rgba(15,23,36,0.08), 0 4px 12px rgba(209,178,0,0.06);
+  max-width:900px; /* ancho controlado para centrar */
+  left:0;
+  right:0;
 }
 
 .hero-content h2{
@@ -108,11 +130,56 @@ body{
 
 .info{
   margin:1.5rem 0;
-  background: #fff;
+  background: var(--card);
   padding:1rem;
   border-radius:10px;
+  /* acento dorado a la izquierda para contraste con azul/blanco/gold */
+  border-left:4px solid rgba(209,178,0,0.95);
+  box-shadow: 0 8px 20px rgba(11,118,209,0.04);
 }
 
+/* Contenedor para los 3 recuadros inferiores.
+   Asegúrate de envolver esos 3 recuadros en un elemento con la clase .info-row
+   Ejemplo en HTML:
+   <div class="info-row">
+     <div class="info">...</div>
+     <div class="info">...</div>
+     <div class="info">...</div>
+   </div>
+*/
+.info-row, .cards, .info-grid {
+  display:flex;
+  gap:1rem;
+  justify-content:center; /* centra los recuadros horizontalmente */
+  align-items:stretch;
+  flex-wrap:wrap;
+  margin:1.5rem auto;
+  max-width:var(--max-width);
+  padding:0 1rem;
+}
+
+/* que cada recuadro tenga ancho coherente y contraste */
+.info-row .info, .info-grid .info, .cards .info {
+  flex: 1 1 300px;
+  max-width:340px;
+  min-width:220px;
+  margin:0; /* el gap ya da separación */
+  background: linear-gradient(180deg, #ffffff 0%, #fbfdff 100%);
+  border: 1px solid rgba(11,118,209,0.06);
+}
+
+/* pequeño detalle dorado para títulos o badges dentro del recuadro */
+.info .badge-gold{
+  display:inline-block;
+  padding:0.25rem 0.5rem;
+  background:var(--gold);
+  color:#071018;
+  border-radius:6px;
+  font-weight:700;
+  font-size:0.85rem;
+}
+
+/* Footer y demás */
 .site-footer{
   margin-top:2rem;
   padding:1rem 0;
@@ -133,6 +200,13 @@ body{
   }
   .hero-content{
     max-width:60%;
+    margin-top:-120px;
+  }
+}
+
+@media (max-width:900px){
+  .hero-content{
+    max-width:92%;
   }
 }
 
@@ -140,8 +214,8 @@ body{
   .hero-image{height:260px}
   .hero-content{margin-top:-80px;padding:0.9rem}
 }
-.hero-content, .info, body, .container, .site-header, .site-footer {
-   background: #fff !important;
-   box-shadow: none !important;
-}
 
+/* Evitar reglas globales que anulen colores y sombras importantes.
+   Antes había una regla que forzaba fondo blanco y eliminaba sombras con !important:
+   la hemos eliminado y sustituido por reglas más específicas arriba.
+*/
